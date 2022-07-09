@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question: stackoverflow</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="question_page.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">IITG Stackoverflow</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-info btn-lg" id="profile-btn">
+            <span class="glyphicon glyphicon-user"> Your Profile</span>
+          </a>
+        </div>
+      </nav>
+
+    <div class="card">
+        <h5 class="card-header"><%=title %></h5>
+          <div class="card-body">
+            <h5 class="card-title">Description: </h5>
+            <p class="card-text"><%=description %></p>
+            <p class="card-text">Asked by: <%=username %></p>
+            <p class="card-text">total views : <%=views %></p>
+            <img src=<%=imageLink %> alt="" width="60%">
+          </div>
+    </div>
+    <!-- <div id="que_info">
+        <!-- <h2><%=title %></h2>
+        <h3><%=description %></h3>
+        <h3><%=username %></h3> -->
+        <!-- <h3>total views : <%=views %></h3> -->
+    <!-- </div> -->
+    <!-- <label for="answer">
+        Enter you ans
+    </label> -->
+    <!-- <input type="text" name="" id="answer">
+    <button type="submit" id="submit_btn">Submit</button> -->
+    <h3 id="answers-heading">Answers :</h3>
+    <div id="answers">
+        
+    </div>
+
+    <div id="form-container" class="card">
+        <h5>Contribute an answer</h5>
+        <!-- <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label"><h4>Enter que title</h4></label>
+            <!-- <textarea rows="10">
+                <input type="text" class="form-control" id="queTitle" placeholder="How to center elements inside a div ?">
+            </textarea> -->
+            <!-- <textarea type="text" class="form-control" id="queTitle" placeholder="How to center elements inside a div ?" rows="4"></textarea>
+        </div> --> 
+        <div class="mb-3">
+            <textarea type="text" class="form-control" id="answer" placeholder="Enter your answer" rows="4"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="formImage" class="form-label">Attach an image (optional)</label>
+          <input class="form-control" type="file" id="formImage" accept="image/*">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" id="submit_btn">Add answer</button>
+        </div>
+    </div>
+    <script src="../question_page.js"></script>
+</body>
+</html>

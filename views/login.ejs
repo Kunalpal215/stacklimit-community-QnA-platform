@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">IITG Stackoverflow</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <h1 id="welcome-head">Sign In to continue</h1>
+
+      <div id="form-container" class="card">
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label"><h4>Enter your email</h4></label>
+            <input type="text" class="form-control" id="user_email" placeholder="john@doe.com">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label"><h4>Enter your password</h4></label>
+            <input type="text" class="form-control" id="user_password" placeholder="abc1234">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" id="submit-button">Sign In</button>
+        </div>
+    </div>
+
+    <h5 id="login-text">New User ? <a href="/signup">Sign Up</a></h5>
+
+    <!-- <div>
+        <label for="user_email">Enter email</label>
+        <input type="email" name="" id="user_email">
+        <label for="user_email">Enter passowrd</label>
+        <input type="email" name="" id="user_password">
+        <button type="submit" id="submit-button">Submit</button>
+    </div> -->
+    <script src="login.js"></script>
+</body>
+</html>

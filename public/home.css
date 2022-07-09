@@ -1,0 +1,33 @@
+
+#welcome-head{
+    margin: 8px 0px 8px 16px;
+}
+
+#top-area{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-title {
+    text-align: left;
+    font-size: 24px;
+}
+
+.card-text {
+    text-align: left;
+    font-size: 20px;
+}
+
+#button-area {
+    display: block;
+    justify-content: left;
+}
+
+.card{
+    margin: 16px 16px 8px 8px;
+}
+
+#ask-question-button{
+    margin: 16px;
+    font-size: 24px;
+}

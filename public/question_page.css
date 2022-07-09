@@ -1,0 +1,31 @@
+.card{
+    margin: 16px 16px 16px 16px;
+}
+
+#answers-heading{
+    margin: 8px 0px 8px 16px;
+}
+
+#form-container{
+    padding: 16px 16px 16px 16px;
+    margin: 16px 16px 0px 16px;
+}
+
+.like-area{
+    margin: 0px 0px 0px 16px;
+}
+
+#div-main{
+    padding: 8px 8px 8px 8px;
+    display: grid;
+    grid-template-columns: 1fr 25fr;
+    grid-gap: 20px;
+}
+
+.answer-image{
+    margin: 0px 0px 16px 16px;
+}
+/* .like-area{
+    display: flex;
+    justify-content: flex-start;
+} */

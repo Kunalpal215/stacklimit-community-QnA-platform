@@ -1,0 +1,30 @@
+{
+  "name": "jwt_learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "16.15.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "form-data": "^4.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.5",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.1",
+    "uuid": "^8.3.2"
+  }
+}
