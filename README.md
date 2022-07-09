@@ -1,3 +1,4 @@
+<br />
 <p align="center"><img src="./assets/StackLimit.png" height="150"></p>
 
 # StackLimit
@@ -33,36 +34,39 @@ You need to add following two varaibles in your .env file:
 # 🖼️ Some glimpse of the website
 ## Signup Page
 <img src="assets/SignUp.png">
-<p></p>
+<br />
 
 ## Login Page
 <img src="assets/Login.png">
-<p></p>
+<br />
 
 ## HomePage
 <img src="assets/HomePage.png">
-<p></p>
+<br />
 
 ## Add Question Page
 <img src="assets/AskQuestion.png">
-<p></p>
+<br />
 
 ## Question Discussion Page
 <img src="assets/QnA_1.png">
-<p></p>
+<br />
 <img src="assets/QnA_2.png">
-<p></p>
+<br />
 
 ## Profile Page
 <img src="assets/Profile.png">
-<p></p>
+<br />
 
 ## 404 Error Page
 <img src="assets/NotFound.png">
-<p></p>
+<br />
+<br />
 
 # 🐛 Bug Reporting
 #### Feel free to [open an issue](https://github.com/Kunalpal215/stacklimit-community-QnA-platform/issues) on GitHub if you find any bug.
+
+<br />
 
 # ⭐ Feature Suggestion
 #### Feel free to [open an issue](https://github.com/Kunalpal215/stacklimit-community-QnA-platform/issues) on GitHub if you have feature idea to be added 🙌.
