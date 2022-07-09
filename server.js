@@ -36,15 +36,11 @@ app.get("/auth_page",(req,res) => {
 
 mongoose.connect(process.env.MONGODB_URL,() => {
     app.listen(process.env.PORT || 3000,() => {
-        console.log("Server Started");
         cron.schedule("59 23 28 * *",async () => {
-            console.log("job started");
             const ques = await queModel.find();
             ques.forEach( async element => {
-                console.log(element);
                 const session = await mongoose.startSession();
                 session.startTransaction();
-                console.log(element["_id"]);
                 try{
                     const user = await queModel.findById(element["_id"]);
                     user["newlyViews"]=0;
@@ -52,15 +48,12 @@ mongoose.connect(process.env.MONGODB_URL,() => {
                     await session.commitTransaction();
                 }
                 catch(err){
-                    console.log(err);
                     await session.abortTransaction();
                 }
                 finally{
                     await session.endSession();
                 }
-                console.log(element["_id"]);
             });
-            console.log("job finished");
         });
     });
 });

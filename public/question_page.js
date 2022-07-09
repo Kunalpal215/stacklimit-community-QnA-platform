@@ -13,7 +13,6 @@ async function checkLogin(toRedirect){
             if(toRedirect) window.location.href = "/auth_page";
             return false;
         }
-        console.log(jsonResponse["result"]);
         useremail = jsonResponse["result"];
         profileBtn.setAttribute("href","user/get/" + useremail);
         return true;
@@ -38,8 +37,6 @@ async function getAnswers(){
             let answerTextElement = document.createElement("div");
             answerTextElement.innerText = element["answer"];
             let likeElement = document.createElement("img");
-            console.log(element["likers"]);
-            console.log(useremail);
             if(element["likers"].includes(useremail)){
                 likeElement.setAttribute("src","https://stormy-lake-92165.herokuapp.com/images/black-like.png");
             }
@@ -53,7 +50,6 @@ async function getAnswers(){
             likesCounter.innerText = element["likes"];
             likeArea.appendChild(likesCounter);
             likeArea.addEventListener("click",async (e) => {
-                console.log("HELLO WORLD");
                 let postURL = "https://stormy-lake-92165.herokuapp.com/question/ans/like?ansID=" + element["_id"];
                 await fetch(postURL,{
                     method: "POST",
@@ -136,9 +132,7 @@ submitBtn.addEventListener('click',async (e) => {
         });
     }
     const id = window.location.href.split("=")[1];
-    console.log(id);
     const url = "https://stormy-lake-92165.herokuapp.com/question/ans?id=" + id;
-    console.log(useremail);
     fetch(url,{
         method: "POST",
         credentials: "same-origin",

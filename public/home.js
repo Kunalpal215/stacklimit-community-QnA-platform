@@ -18,7 +18,6 @@ async function checkLogin(){
             window.location.href = "/auth_page";
             return false;
         }
-        console.log(jsonResponse["result"]);
         useremail = jsonResponse["result"];
         profileBtn.setAttribute("href","user/get/" + useremail);
         return true;
@@ -29,11 +28,8 @@ newTab.addEventListener('click',(e) => {
     if(newTab.classList.length==5) return;
     hotTab.classList.remove("active");
     newTab.classList.add("active");
-    console.log("here 3");
     askedQues.innerHTML=null;
-    console.log("here 4");
     newQues.forEach(element => askedQues.appendChild(element));
-    console.log("here 5");
 });
 
 hotTab.addEventListener('click',(e) => {
@@ -77,13 +73,10 @@ function getQuestionTile(title, description, redirectLink,viewsString){
     cardBody.appendChild(descp);
     cardBody.appendChild(btnDiv);
     tile.appendChild(cardBody);
-    console.log(tile.classList);
     return tile;
 }
 
 async function getQuestions(sub_endpoint){
-    console.log(sub_endpoint);
-    console.log("call started");
     let result;
     await fetch("https://stormy-lake-92165.herokuapp.com/question" + sub_endpoint + "?page=" + pages[sub_endpoint=="/all" ? 0 : 1].toString(),{
         method: "GET",
@@ -92,13 +85,11 @@ async function getQuestions(sub_endpoint){
             "Content-type" : "x-www-form-urlencoded"
         }
     }).then((res) => res.json()).then((jsonResponse) => {
-        console.log(jsonResponse);
         if(jsonResponse["result"]==false){
             result = false;
         }
         if(sub_endpoint=="/all"){
             newQues=[];
-            console.log("here all");
         }
         else{
             hotQues=[];
@@ -107,23 +98,16 @@ async function getQuestions(sub_endpoint){
             let queBlock = document.createElement("div");
             let redirectLink = `/question?id=${element['_id']}`;
             let tile = getQuestionTile(element["title"],element["description"],redirectLink,sub_endpoint=="/all" ? `Total : ${element["views"]} views` : `This month: ${element["newlyViews"]} views`);
-            // let aTag = document.createElement('a');
-            // console.log(redirectLink);
-            // aTag.setAttribute("href",redirectLink);
-            // aTag.innerText = element["title"] + " " + element["description"];
-            // queBlock.appendChild(aTag);
             if(sub_endpoint=="/all"){
                 newQues.push(tile);
             }
             else{
                 hotQues.push(tile);
             }
-            console.log("call ended");
             result = true;
             // askedQues.appendChild(tile);
         });
     });
-    console.log(result);
     return result;
 }
 
@@ -136,12 +120,10 @@ nextBtn.addEventListener('click', async (e) => {
     let tab = whichTabToProceed();
     pages[tab]++;
     let result = await getQuestions(tab==0 ? "/all" : "/hot");
-    console.log(result);
     if(!result){
         pages[tab]--;
         return;
     }
-    console.log("here X");
     askedQues.innerHTML=null;
     if(tab==0) newQues.forEach(element => askedQues.appendChild(element));
     else hotQues.forEach(element => askedQues.appendChild(element));

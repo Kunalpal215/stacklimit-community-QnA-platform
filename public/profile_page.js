@@ -1,5 +1,4 @@
 let userID = location.href.split("/")[5];
-console.log(userID);
 
 let useremail;
 async function checkLogin(){
@@ -11,7 +10,6 @@ async function checkLogin(){
             window.location.href = "/auth_page";
             return false;
         }
-        console.log(jsonResponse["result"]);
         useremail = jsonResponse["result"];
         return true;
     });
