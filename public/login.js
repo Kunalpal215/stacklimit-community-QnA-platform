@@ -17,7 +17,7 @@ function validateForm(){
 
 btn.addEventListener('click', () => {
     if(!validateForm()) return;
-    fetch("http://localhost:3000/login", {
+    fetch("https://infinite-cliffs-51192.herokuapp.com/login", {
         method: "POST",
         body: JSON.stringify({
             useremail: user_email.value.trim(),

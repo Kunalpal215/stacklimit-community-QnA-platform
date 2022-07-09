@@ -15,6 +15,6 @@ exports.uploadImage = async (req,res) => {
     jwt.verify(token,process.env.JWT_SECRET,(err,decoded) => {
         useremail=decoded["data"];
     });
-    let imageLink = "http://localhost:3000/uploaded_images/" + req.file.filename;
+    let imageLink = "https://infinite-cliffs-51192.herokuapp.com/uploaded_images/" + req.file.filename;
   res.json({result : true,link : imageLink});
 }

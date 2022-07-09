@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
     },
     imageLink: {
         type: String,
-        default: "http://localhost:3000/images/profile-default.png"
+        default: "https://infinite-cliffs-51192.herokuapp.com/images/profile-default.png"
     },
     answersGiven: {
         type: Number,
