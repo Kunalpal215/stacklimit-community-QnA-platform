@@ -1,1 +1,0 @@
-# stacklimit-community-QnA-platform
