@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question: stackoverflow</title>
+    <title>StackLimit: QnA</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="question_page.css">
 </head>
@@ -16,16 +16,6 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
           <a href="#" class="btn btn-info btn-lg" id="profile-btn">
             <span class="glyphicon glyphicon-user"> Your Profile</span>
           </a>
@@ -39,7 +29,9 @@
             <p class="card-text"><%=description %></p>
             <p class="card-text">Asked by: <%=username %></p>
             <p class="card-text">total views : <%=views %></p>
-            <img src=<%=imageLink %> alt="" width="60%">
+            <% if(imageLink!=""){%>
+                <img src=<%=imageLink %> alt="" width="60%">
+              <%}%>
           </div>
     </div>
     <!-- <div id="que_info">

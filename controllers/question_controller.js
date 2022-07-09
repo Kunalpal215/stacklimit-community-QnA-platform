@@ -6,25 +6,25 @@ const {addQuestionsAsked} = require("./profile_controller");
 
 exports.getAllQuestions = async (req,res) => {
     const page = req.query.page;
-    const toSkip = (page-1)*2;
+    const toSkip = (page-1)*5;
     const docsCount = await questionModel.countDocuments();
     if(toSkip>docsCount){
         res.json({"result" : false, "details" : []});
         return;
     }
-    const questions = await questionModel.find().sort({"_id":-1}).skip(toSkip).limit(2);
+    const questions = await questionModel.find().sort({"_id":-1}).skip(toSkip).limit(5);
     res.json({"result" : true,"details" : questions});
 }
 
 exports.getHotQuestions = async (req,res) => {
     const page = req.query.page;
-    const toSkip = (page-1)*2;
+    const toSkip = (page-1)*5;
     const docsCount = await questionModel.countDocuments();
     if(toSkip>docsCount){
         res.json({"result" : false, "details" : []});
         return;
     }
-    const questions = await questionModel.find().sort({"newlyViews":-1}).sort({"_id" : -1}).skip(toSkip).limit(2);
+    const questions = await questionModel.find().sort({"newlyViews":-1}).sort({"_id" : -1}).skip(toSkip).limit(5);
     res.json({"details" : questions});
 }
 
@@ -50,6 +50,7 @@ exports.postQuestion = async (req,res) => {
 }
 exports.getQuestion = async (req,res) => {
     const que = await questionModel.findById(req.query.id);
+    console.log(que);
     incrementViews(req,res);
     res.render("question_page", {id: req.query.id, title : que["title"], description: que["description"], username: que["username"],views: que["views"], imageLink : que["imageLink"]});
 }

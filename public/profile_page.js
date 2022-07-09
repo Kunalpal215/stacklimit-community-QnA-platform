@@ -2,7 +2,7 @@ let userID = location.href.split("/")[5];
 
 let useremail;
 async function checkLogin(){
-    await fetch("https://stormy-lake-92165.herokuapp.com/check_login",{
+    await fetch("http://localhost:3000/check_login",{
         method: "GET",
         credentials: "same-origin"
     }).then((res) => res.json()).then((jsonResponse) => {

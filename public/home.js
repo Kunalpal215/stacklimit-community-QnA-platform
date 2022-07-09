@@ -10,7 +10,7 @@ let pages = [1,1];
 
 let useremail;
 async function checkLogin(){
-    await fetch("https://stormy-lake-92165.herokuapp.com/check_login",{
+    await fetch("http://localhost:3000/check_login",{
         method: "GET",
         credentials: "same-origin"
     }).then((res) => res.json()).then((jsonResponse) => {
@@ -59,7 +59,7 @@ function getQuestionTile(title, description, redirectLink,viewsString){
     topArea.appendChild(viewsElement);
     let descp = document.createElement("p");
     descp.classList.add("card-text");
-    descp.innerHTML = description;
+    descp.innerHTML = description.length>50 ? description.substring(0,100) + "..." : description;
     let btnDiv = document.createElement("div");
     btnDiv.classList.add("float-start");
     let btn = document.createElement("a");
@@ -78,7 +78,7 @@ function getQuestionTile(title, description, redirectLink,viewsString){
 
 async function getQuestions(sub_endpoint){
     let result;
-    await fetch("https://stormy-lake-92165.herokuapp.com/question" + sub_endpoint + "?page=" + pages[sub_endpoint=="/all" ? 0 : 1].toString(),{
+    await fetch("http://localhost:3000/question" + sub_endpoint + "?page=" + pages[sub_endpoint=="/all" ? 0 : 1].toString(),{
         method: "GET",
         credentials: "same-origin",
         headers: {

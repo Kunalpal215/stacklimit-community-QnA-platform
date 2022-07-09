@@ -34,6 +34,14 @@ app.get("/auth_page",(req,res) => {
     res.render("auth_page");
 });
 
+app.get("/icon",(req,res) => {
+    res.sendFile(__dirname + "/public/icons/favicon.ico");
+});
+
+app.get("*",(req,res) => {
+    res.render("not_found.ejs")
+})
+
 mongoose.connect(process.env.MONGODB_URL,() => {
     app.listen(process.env.PORT || 3000,() => {
         cron.schedule("59 23 28 * *",async () => {

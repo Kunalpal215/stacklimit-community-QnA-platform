@@ -17,7 +17,7 @@ function validateForm(){
 
 btn.addEventListener('click', () => {
     if(!validateForm()) return;
-    fetch("https://stormy-lake-92165.herokuapp.com/login", {
+    fetch("http://localhost:3000/login", {
         method: "POST",
         body: JSON.stringify({
             useremail: user_email.value.trim(),

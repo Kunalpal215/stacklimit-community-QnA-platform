@@ -5,7 +5,7 @@ const submitBtn = document.getElementById("submit_btn");
 const profileBtn = document.getElementById("profile-btn");
 let email="";
 async function checkLogin(){
-    await fetch("https://stormy-lake-92165.herokuapp.com/check_login",{
+    await fetch("http://localhost:3000/check_login",{
         method: "GET",
         credentials: "include"
     }).then((res) => res.json()).then((jsonResponse) => {
@@ -39,7 +39,7 @@ submitBtn.addEventListener('click',async (e) => {
             let imageFile = imageInput.files[0];
             let formData = new FormData();
             formData.append("myFile",imageFile);
-            await fetch('https://stormy-lake-92165.herokuapp.com/image/upload',{
+            await fetch('http://localhost:3000/image/upload',{
                 method: "POST",
                 credentials: 'same-origin',
                 body: formData
@@ -59,7 +59,7 @@ submitBtn.addEventListener('click',async (e) => {
                 }
             });
         }
-        fetch("https://stormy-lake-92165.herokuapp.com/question/ask",{
+        fetch("http://localhost:3000/question/ask",{
             method: "POST",
             credentials: 'same-origin',
             body: JSON.stringify({

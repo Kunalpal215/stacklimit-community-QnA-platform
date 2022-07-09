@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
     },
     imageLink: {
         type: String,
-        default: "https://stormy-lake-92165.herokuapp.com/images/profile-default.png"
+        default: "http://localhost:3000/images/profile-default.png"
     },
     answersGiven: {
         type: Number,
