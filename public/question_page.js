@@ -5,7 +5,7 @@ const submitBtn = document.getElementById("submit_btn");
 const profileBtn = document.getElementById("profile-btn");
 let useremail;
 async function checkLogin(toRedirect){
-    return await fetch("https://infinite-cliffs-51192.herokuapp.com/check_login",{
+    return await fetch("https://stacklimit.herokuapp.com/check_login",{
         method: "GET",
         credentials: "same-origin"
     }).then((res) => res.json()).then((jsonResponse) => {
@@ -22,7 +22,7 @@ async function checkLogin(toRedirect){
 async function getAnswers(){
     checkLogin(false);
     const id = window.location.href.split("=")[1];
-    const url = "https://infinite-cliffs-51192.herokuapp.com/question/ans?id=" + id;
+    const url = "https://stacklimit.herokuapp.com/question/ans?id=" + id;
     return await fetch(url,{
         method: "GET",
         credentials: 'include',
@@ -38,10 +38,10 @@ async function getAnswers(){
             answerTextElement.innerText = element["answer"];
             let likeElement = document.createElement("img");
             if(element["likers"].includes(useremail)){
-                likeElement.setAttribute("src","https://infinite-cliffs-51192.herokuapp.com/images/black-like.png");
+                likeElement.setAttribute("src","https://stacklimit.herokuapp.com/images/black-like.png");
             }
             else{
-                likeElement.setAttribute("src","https://infinite-cliffs-51192.herokuapp.com/images/white-like.png");
+                likeElement.setAttribute("src","https://stacklimit.herokuapp.com/images/white-like.png");
             }
             likeElement.setAttribute("height","16");
             let likeArea = document.createElement("div");
@@ -50,7 +50,7 @@ async function getAnswers(){
             likesCounter.innerText = element["likes"];
             likeArea.appendChild(likesCounter);
             likeArea.addEventListener("click",async (e) => {
-                let postURL = "https://infinite-cliffs-51192.herokuapp.com/question/ans/like?ansID=" + element["_id"];
+                let postURL = "https://stacklimit.herokuapp.com/question/ans/like?ansID=" + element["_id"];
                 await fetch(postURL,{
                     method: "POST",
                     credentials: 'include',
@@ -61,7 +61,7 @@ async function getAnswers(){
                 .then((resAns) => resAns.json())
                 .then((ansJsonResponse) => {
                     if(ansJsonResponse["saved"] === 2){
-                        likeElement.setAttribute("src","https://infinite-cliffs-51192.herokuapp.com/images/black-like.png");
+                        likeElement.setAttribute("src","https://stacklimit.herokuapp.com/images/black-like.png");
                         likesCounter.innerText = ansJsonResponse["likes"];
                         likeArea.removeChild(likeArea.lastChild);
                         likeArea.removeChild(likeArea.lastChild);
@@ -111,7 +111,7 @@ submitBtn.addEventListener('click',async (e) => {
         let imageFile = imageInput.files[0];
         let formData = new FormData();
         formData.append("myFile",imageFile);
-        await fetch('https://infinite-cliffs-51192.herokuapp.com/image/upload',{
+        await fetch('https://stacklimit.herokuapp.com/image/upload',{
             method: "POST",
             credentials: 'same-origin',
             body: formData
@@ -132,7 +132,7 @@ submitBtn.addEventListener('click',async (e) => {
         });
     }
     const id = window.location.href.split("=")[1];
-    const url = "https://infinite-cliffs-51192.herokuapp.com/question/ans?id=" + id;
+    const url = "https://stacklimit.herokuapp.com/question/ans?id=" + id;
     fetch(url,{
         method: "POST",
         credentials: "same-origin",

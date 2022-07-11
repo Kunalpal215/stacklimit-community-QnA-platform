@@ -21,7 +21,7 @@ function validateForm(){
 
         btn.addEventListener('click',() => {
             if(!validateForm()) return;
-            fetch("https://infinite-cliffs-51192.herokuapp.com/signup",{
+            fetch("https://stacklimit.herokuapp.com/signup",{
                 method: "POST",
                 body: JSON.stringify({
                     username: username.value.trim(),
