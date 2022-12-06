@@ -5,7 +5,7 @@
 #### StackLimit is a community based platform where users can post questions and answer to other's questions as well. Supporting image can also be uploaded with questions & answers. Also, every question has it's monthly and total views count attached.
 
 ## Live Demo
-#### This project is deployed on Heroku which you can view at [StackLimit Website](https://stacklimit.herokuapp.com/) and view [ppt here](https://www.canva.com/design/DAFF49-0bHk/aEyEdeepZc3-sbK5RlnjVw/view?utm_content=DAFF49-0bHk&utm_campaign=designshare&utm_medium=link&utm_source=viewer)
+#### This project is deployed on Heroku which you can view at [StackLimit Website](https://stacklimit-community-qna-platform.onrender.com/) and view [ppt here](https://www.canva.com/design/DAFF49-0bHk/aEyEdeepZc3-sbK5RlnjVw/view?utm_content=DAFF49-0bHk&utm_campaign=designshare&utm_medium=link&utm_source=viewer)
 
 ## 🧩 Main Features
 #### <ul><li>Hot & New Questions Category</li><li>Interactive discussion with Upvoting answers</li><li>Questions Total & Monthly views count</li><li>Image Upload with Questions and Answers</li></ul>
