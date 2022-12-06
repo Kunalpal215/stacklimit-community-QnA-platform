@@ -17,7 +17,7 @@ function validateForm(){
 
 btn.addEventListener('click', () => {
     if(!validateForm()) return;
-    fetch("https://stacklimit.herokuapp.com/login", {
+    fetch("https://stacklimit-community-qna-platform.onrender.com/login", {
         method: "POST",
         body: JSON.stringify({
             useremail: user_email.value.trim(),

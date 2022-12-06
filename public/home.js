@@ -10,7 +10,7 @@ let pages = [1,1];
 
 let useremail;
 async function checkLogin(){
-    await fetch("https://stacklimit.herokuapp.com/check_login",{
+    await fetch("https://stacklimit-community-qna-platform.onrender.com/check_login",{
         method: "GET",
         credentials: "same-origin"
     }).then((res) => res.json()).then((jsonResponse) => {
@@ -78,7 +78,7 @@ function getQuestionTile(title, description, redirectLink,viewsString){
 
 async function getQuestions(sub_endpoint){
     let result;
-    await fetch("https://stacklimit.herokuapp.com/question" + sub_endpoint + "?page=" + pages[sub_endpoint=="/all" ? 0 : 1].toString(),{
+    await fetch("https://stacklimit-community-qna-platform.onrender.com/question" + sub_endpoint + "?page=" + pages[sub_endpoint=="/all" ? 0 : 1].toString(),{
         method: "GET",
         credentials: "same-origin",
         headers: {

@@ -21,7 +21,7 @@ function validateForm(){
 
         btn.addEventListener('click',() => {
             if(!validateForm()) return;
-            fetch("https://stacklimit.herokuapp.com/signup",{
+            fetch("https://stacklimit-community-qna-platform.onrender.com/signup",{
                 method: "POST",
                 body: JSON.stringify({
                     username: username.value.trim(),

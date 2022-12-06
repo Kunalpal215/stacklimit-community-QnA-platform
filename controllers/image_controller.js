@@ -15,6 +15,6 @@ exports.uploadImage = async (req,res) => {
     jwt.verify(token,process.env.JWT_SECRET,(err,decoded) => {
         useremail=decoded["data"];
     });
-    let imageLink = "https://stacklimit.herokuapp.com/uploaded_images/" + req.file.filename;
+    let imageLink = "https://stacklimit-community-qna-platform.onrender.com/uploaded_images/" + req.file.filename;
   res.json({result : true,link : imageLink});
 }

@@ -5,7 +5,7 @@ const submitBtn = document.getElementById("submit_btn");
 const profileBtn = document.getElementById("profile-btn");
 let email="";
 async function checkLogin(){
-    await fetch("https://stacklimit.herokuapp.com/check_login",{
+    await fetch("https://stacklimit-community-qna-platform.onrender.com/check_login",{
         method: "GET",
         credentials: "include"
     }).then((res) => res.json()).then((jsonResponse) => {
@@ -39,7 +39,7 @@ submitBtn.addEventListener('click',async (e) => {
             let imageFile = imageInput.files[0];
             let formData = new FormData();
             formData.append("myFile",imageFile);
-            await fetch('https://stacklimit.herokuapp.com/image/upload',{
+            await fetch('https://stacklimit-community-qna-platform.onrender.com/image/upload',{
                 method: "POST",
                 credentials: 'same-origin',
                 body: formData
@@ -59,7 +59,7 @@ submitBtn.addEventListener('click',async (e) => {
                 }
             });
         }
-        fetch("https://stacklimit.herokuapp.com/question/ask",{
+        fetch("https://stacklimit-community-qna-platform.onrender.com/question/ask",{
             method: "POST",
             credentials: 'same-origin',
             body: JSON.stringify({

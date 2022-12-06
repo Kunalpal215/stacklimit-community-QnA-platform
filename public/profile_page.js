@@ -2,7 +2,7 @@ let userID = location.href.split("/")[5];
 
 let useremail;
 async function checkLogin(){
-    await fetch("https://stacklimit.herokuapp.com/check_login",{
+    await fetch("https://stacklimit-community-qna-platform.onrender.com/check_login",{
         method: "GET",
         credentials: "same-origin"
     }).then((res) => res.json()).then((jsonResponse) => {

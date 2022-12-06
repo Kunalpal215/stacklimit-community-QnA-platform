@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
     },
     imageLink: {
         type: String,
-        default: "https://stacklimit.herokuapp.com/images/profile-default.png"
+        default: "https://stacklimit-community-qna-platform.onrender.com/images/profile-default.png"
     },
     answersGiven: {
         type: Number,
